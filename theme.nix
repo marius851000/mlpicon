@@ -54,7 +54,9 @@ Context=Applications
 
 	cropped_firefox = convert_image "-crop 1920x1920+150+279" sources.firefox_icon "firefox_icon_cropped.png";
 
-	cropped_discord = convert_image "-crop 398x398+50+73" sources.discord_icon "discord_icon_cropper.png";
+	cropped_discord = convert_image "-crop 398x398+50+73" sources.discord_icon "discord_icon_cropped.png";
+
+	cropped_golden_note = convert_image "-crop 1464x1464+56+54 -fuzz 10% -transparent 'rgb(11,11,11)'" sources.mlk_golden_note_avatar "golden_note_cropped.png";
 in
 pkgs.stdenv.mkDerivation {
 	name = "ponyiconpack";
@@ -91,7 +93,7 @@ pkgs.stdenv.mkDerivation {
 	# firefox
 	ln -s ${sources.firefox_icon_fluttershy} pack/apps/256/firefox.png
 	# discord
-	ln -s ${convert_image "-resize 256x256!" cropped_discord "discord_icon_resized.pnd"} pack/apps/256/discord.png
+	ln -s ${convert_image "-resize 256x256!" cropped_discord "discord_icon_resized.png"} pack/apps/256/discord.png
 	# pikmin789 icon pack v4
 	${
 		lib.concatStringsSep "\n" (
@@ -107,6 +109,9 @@ pkgs.stdenv.mkDerivation {
 			}
 		)
 	}
+
+	# my little karaoke
+	ln -s ${convert_image "-resize 512x512!" cropped_golden_note "golden_note_resized.png"} pack/apps/512/my-little-karaoke.png
 
 	# embedded icon
 	# steam, based on papirus-dark and the picture id 767915 on derpibooru

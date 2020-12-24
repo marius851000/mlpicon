@@ -33,4 +33,10 @@ in
 		name = "pikmin789_icon_pack_v4.zip";
 		sha256 = "mprdfasVr8Sav4tujMcEsnyQcpy477y8+/atQ5ByN2A=";
 	};
+
+	mlk_golden_note_avatar = gallery-dl-download {
+		url = "https://www.deviantart.com/strykarispeeder/art/Golden-Notes-OC-Avatar-596817002";
+		name = "mlk_golden_note_avatar.png";
+		sha256 = "jzlCbkGfsm34al6YHhhHKaMh4GxgUtFyY37lpBCYff0=";
+	};
 }
