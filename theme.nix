@@ -119,7 +119,7 @@ pkgs.stdenv.mkDerivation {
 	'';
 
 	installPhase = ''
-		mkdir -p $out/share/icons/ponyicon
+		mkdir -p $out/share/icons
 		cp -r pack $out/share/icons/ponyicon
 	'';
 }
