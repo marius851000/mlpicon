@@ -116,6 +116,8 @@ pkgs.stdenv.mkDerivation {
 
 	# my little karaoke
 	ln -s ${convert_image "-resize 512x512!" cropped_golden_note "golden_note_resized.png"} pack/apps/512/my-little-karaoke.png
+	ln -s ${convert_image "-resize 256x256!" cropped_golden_note "golden_note_resized.png"} pack/apps/256/my-little-karaoke.png
+	ln -s ${convert_image "-resize 256x256!" cropped_golden_note "golden_note_resized.png"} pack/apps/256/my-little-karaoke-beta.png
 
 	# embedded icon
 	# steam, based on papirus-dark and the picture id 767915 on derpibooru
