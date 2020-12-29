@@ -46,6 +46,10 @@ Context=Applications
 [apps/256]
 Size=256
 Context=Applications
+
+[apps/512]
+Size=512
+Context=Applications
 ";
 
 	LOIconPack = unzip sources.LOIconPack;
