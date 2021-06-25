@@ -39,4 +39,10 @@ in
 		name = "mlk_golden_note_avatar.png";
 		sha256 = "jzlCbkGfsm34al6YHhhHKaMh4GxgUtFyY37lpBCYff0=";
 	};
+
+	vlc_icon = pkgs.fetchurl {
+		url = "https://derpicdn.net/img/download/2012/10/11/119760.png";
+		name = "vlc_icon.png";
+		sha256 = "3eH7ArRYV/LAagYtET3udgNKFZ0f2lNel3KNAe9g6mk=";
+	};
 }

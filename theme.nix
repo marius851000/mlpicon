@@ -113,6 +113,9 @@ pkgs.stdenv.mkDerivation {
 	# my little karaoke
 	ln -s ${convert_image "-resize 256x256!" cropped_golden_note "golden_note_resized.png"} pack/apps/256/my-little-karaoke.png
 
+	# vlc
+	ln -s ${convert_image "-resize 512x512" sources.vlc_icon "vlc.png"} pack/apps/512/vlc.png
+
 	# embedded icon
 	# steam, based on papirus-dark and the picture id 767915 on derpibooru
 	ln -s ${./icon/steam.svg} pack/apps/256/steam.svg
