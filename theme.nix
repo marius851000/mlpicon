@@ -46,6 +46,10 @@ Context=Applications
 [apps/256]
 Size=256
 Context=Applications
+
+[apps/512]
+Size=512
+Context=Applications
 ";
 
 	LOIconPack = unzip sources.LOIconPack;
@@ -90,35 +94,38 @@ pkgs.stdenv.mkDerivation {
 			}
 		)}
 
-	# firefox
-	ln -s ${sources.firefox_icon_fluttershy} pack/apps/256/firefox.png
-	# discord
-	ln -s ${convert_image "-resize 256x256!" cropped_discord "discord_icon_resized.png"} pack/apps/256/discord.png
-	# pikmin789 icon pack v4
-	${
-		lib.concatStringsSep "\n" (
-			lib.mapAttrsToList (k: v: ''
-					ln -s ${convert_image "-resize 256x256!" "\"${pikmin789_icon_pack_v4}/MLP Icons/${v}\"\\[8]" "icon.png"} pack/apps/256/${k}.png
-			'')
-			{
-				steam_icon_4000 = "gmod.ico";
-				steam_icon_220 = "half life 2.ico";
-				steam_icon_400 = "portal.ico";
-				steam_icon_489830 = "skyrim.ico.ico";
-				"osu!" = "osu!.ico";
-			}
-		)
-	}
+		# firefox
+		ln -s ${sources.firefox_icon_fluttershy} pack/apps/256/firefox.png
+		# discord
+		ln -s ${convert_image "-resize 256x256!" cropped_discord "discord_icon_resized.png"} pack/apps/256/discord.png
+		# pikmin789 icon pack v4
+		${
+			lib.concatStringsSep "\n" (
+				lib.mapAttrsToList (k: v: ''
+						ln -s ${convert_image "-resize 256x256!" "\"${pikmin789_icon_pack_v4}/MLP Icons/${v}\"\\[8]" "icon.png"} pack/apps/256/${k}.png
+				'')
+				{
+					steam_icon_4000 = "gmod.ico";
+					steam_icon_220 = "half life 2.ico";
+					steam_icon_400 = "portal.ico";
+					steam_icon_489830 = "skyrim.ico.ico";
+					"osu!" = "osu!.ico";
+				}
+			)
+		}
 
-	# my little karaoke
-	ln -s ${convert_image "-resize 256x256!" cropped_golden_note "golden_note_resized.png"} pack/apps/256/my-little-karaoke.png
+		# my little karaoke
+		ln -s ${convert_image "-resize 256x256!" cropped_golden_note "golden_note_resized.png"} pack/apps/256/my-little-karaoke.png
 
-	# vlc
-	ln -s ${convert_image "-resize 512x512" sources.vlc_icon "vlc.png"} pack/apps/512/vlc.png
+		# vlc
+		ln -s ${convert_image "-resize 512x512" sources.vlc_icon "vlc.png"} pack/apps/512/vlc.png
 
-	# embedded icon
-	# steam, based on papirus-dark and the picture id 767915 on derpibooru
-	ln -s ${./icon/steam.svg} pack/apps/256/steam.svg
+		# embedded icon
+		# steam, based on papirus-dark and the picture id 767915 on derpibooru
+		ln -s ${./icon/steam.svg} pack/apps/256/steam.svg
+
+		# gimp, based on papirus-dark and Twitch Date Pokemon (actually not MLP)
+		ln -s ${./icon/gimp-air.svg} pack/apps/512/gimp.svg
 	'';
 
 	installPhase = ''
