@@ -95,7 +95,8 @@ pkgs.stdenv.mkDerivation {
 		)}
 
 		# firefox
-		ln -s ${sources.firefox_icon_fluttershy} pack/apps/256/firefox.png
+		#ln -s ${sources.firefox_icon_fluttershy} pack/apps/256/firefox.png
+		ln -s ${./icon/grovyle-firefox-criticalswiler.svg} pack/apps/512/firefox.svg
 		# discord
 		ln -s ${convert_image "-resize 256x256!" cropped_discord "discord_icon_resized.png"} pack/apps/256/discord.png
 		# pikmin789 icon pack v4
