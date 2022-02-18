@@ -6,7 +6,7 @@ let
 	lib = pkgs.lib;
 
 	commandToRun = lib.concatStringsSep "\n" (
-			lib.mapAttrsToList (n: v: "ln -s ${v} $out/${v.name}")
+			lib.mapAttrsToList (n: v: "ln -s ${v} $out/${n}")
 		sources );
 in
 	pkgs.stdenv.mkDerivation {
